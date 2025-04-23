@@ -1,0 +1,167 @@
+/* Reset some default styles */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: red;
+    z-index: 1000;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover {
+    font-weight: bold;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    line-height: 1.6;
+    background-color: red;
+    padding-top: 40px;
+}
+
+.lab {
+    background-color: rgb(0, 200, 255);
+}
+
+.lab-dark {
+    background-color: rgb(0, 175, 225);
+}
+
+.container {
+    flex: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+.title {
+    font-family: serif;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.title:hover {
+    color: white;
+}
+
+.description {
+    font-style: italic;
+    font-size: 0.8rem;
+    padding: 2rem;
+}
+
+.form-container {
+    padding: 3rem;
+    margin: auto;
+}
+.form-container form input,
+.form-container form textarea {
+    width: 300px;
+    box-sizing: border-box;
+    display: block;
+    margin: -10px auto;
+}
+form {
+    margin: 1rem auto;
+    font-size: 0.5rem;
+}
+.form-title {
+    font-size: 0.8rem;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.invisible {
+    display: none;
+    margin: 0;
+    border: none;
+}
+
+form input {
+    margin: -1.5em; /* Reduce space between inputs */
+    background-color: rgb(225, 0, 0);
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+form textarea {
+    background-color: rgb(225, 0, 0);
+    border: 1px solid black;
+    border-radius: 2px;
+}
+
+form input::placeholder, 
+form textarea::placeholder {
+    font-family: Courier, monospace, sans-serif;
+    font-size: 0.7rem;
+    color: black;
+    transition: font-weight 0.2s;
+}
+
+form input:hover::placeholder,
+form textarea:hover::placeholder,
+form input:focus::placeholder,
+form textarea:focus::placeholder {
+    font-weight: bold;
+}
+
+button {
+    background-color: rgb(225, 0, 0);
+    color: black;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 0.5rem 1rem, 1rem;
+    cursor: pointer;
+    font-size: 0.7rem; 
+    font-family: 'Courier New', Courier, monospace;
+    transition: color 0.2s, background-color 0.2s, font-weight 0.2s;
+}
+button:hover {
+    font-weight: bold;
+}
+button:active {
+    background-color: rgb(180, 0, 0);
+    color: black;
+    font-weight: bold;
+}
+
+footer {
+    padding: 0.2rem;
+    width: 100%;
+    color: black;
+    font-size: 0.7rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background: red;
+    z-index: 999;
+}
