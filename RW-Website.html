@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reality Works' Official Website</title>
+    <style>
+        /* Reset some default styles */
+        body, h1, h2, h3, p, ul, li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        html, body {
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: red;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: black;
+            text-decoration: none;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            font-weight: bold;
+        }
+        
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            font-family: 'Courier New', Courier, monospace;
+            text-align: center;
+            line-height: 1.6;
+            background-color: red;
+            padding-top: 40px;
+        }
+
+        .container {
+            flex: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        .title {
+            font-family: serif;
+            margin-bottom: 1rem;
+            margin-top: 2rem;
+        }
+
+        .title:hover {
+            color: white;
+        }
+
+        .description {
+            font-style: italic;
+            font-size: 0.8rem;
+            padding: 2rem;
+        }
+
+        .form-container {
+            padding: 3rem;
+            margin: auto;
+        }
+        .form-container form input,
+        .form-container form textarea {
+            width: 300px;
+            box-sizing: border-box;
+            display: block;
+            margin: -10px auto;
+        }
+        form {
+            margin: 1rem auto;
+            font-size: 0.5rem;
+        }
+        .form-title {
+            font-size: 0.8rem;
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        form label {
+            display: none;
+            margin: 0;
+            border: none;
+        }
+
+        form input {
+            margin: -1.5em; /* Reduce space between inputs */
+            background-color: rgb(225, 0, 0);
+            border: 1px solid black;
+            border-radius: 2px;
+        }
+
+        form textarea {
+            background-color: rgb(225, 0, 0);
+            border: 1px solid black;
+            border-radius: 2px;
+        }
+
+        form input::placeholder, 
+        form textarea::placeholder {
+            font-family: Courier, monospace, sans-serif;
+            font-size: 0.7rem;
+            color: black;
+            transition: font-weight 0.2s;
+        }
+
+        form input:hover::placeholder,
+        form textarea:hover::placeholder,
+        form input:focus::placeholder,
+        form textarea:focus::placeholder {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: rgb(225, 0, 0);
+            color: black;
+            border: 1px solid black;
+            border-radius: 2px;
+            padding: 0.5rem 1rem, 1rem;
+            cursor: pointer;
+            font-size: 0.7rem; 
+            font-family: 'Courier New', Courier, monospace;
+            transition: color 0.2s, background-color 0.2s, font-weight 0.2s;
+        }
+        button:hover {
+            font-weight: bold;
+        }
+        button:active {
+            background-color: rgb(180, 0, 0);
+            color: black;
+            font-weight: bold;
+        }
+
+        footer {
+            padding: 0.2rem;
+            width: 100%;
+            color: black;
+            font-size: 0.7rem;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+            background: red;
+            z-index: 999;
+        }
+
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#labs">Labs</a>
+        <a href="#about">About</a>
+    </nav>
+    <div class="container">
+        <section id="home">
+            <h2 class="title"><a href="" style="color: inherit; text-decoration: none;">RealityWorks.</a></h2>
+            <p class="description">Reality Works is a platform that provides tailor-made 3D solutions and services to support creatives, enterprises and institutions. <br>We believe in digital storytelling harvesting the power of innovative 3D processes.</p>
+            <div class="form-container">
+                <p class="form-title">Contact us:</p>
+                <form>
+                    <label for="name">Name:</label><br>
+                    <input type="text" id="name" name="name" placeholder="Name" required><br><br>
+
+                    <label for="enterprise">Enterprise (Optional):</label><br>
+                    <input type="text" id="enterprise" name="enterprise" placeholder="Enterprise (optional)"><br><br>
+
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" placeholder="Email" required><br><br>
+
+                    <label for="inquiry">Inquiry:</label><br>
+                    <textarea id="inquiry" name="inquiry" placeholder="Inquiry" rows="10" required></textarea><br><br>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+        </section>   
+    </div>
+    <footer>
+        <p>&copy; 2025 RealityWorks. All rights reserved.</p>
+    </footer>
+</body>
+</html>
