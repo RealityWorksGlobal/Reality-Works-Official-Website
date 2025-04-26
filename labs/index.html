@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reality Works' Official Website</title>
+    <link rel="stylesheet" href="/css/styles.css">
+ 
+</head>
+<body class="lab">
+    <nav class="lab">
+        <a class="inactive">labs&nbsp;&nbsp;</a>
+        <a href="/">RW</a>
+        <a href="/services/">services</a>
+    </nav>
+    <div class="container">
+        <section id="home" class="blend-container">
+            <h2 class="title blend-text">our labs</h2>
+            <p class="description blend-text">Come on, click around!</p>
+            </section>
+    </div>
+    <footer class="lab">
+        <p>&copy; 2025 Reality.Works. All rights reserved.</p>
+    </footer>
+
+    <script>
+    const imageFolder = "../image/";
+    const imageFiles = ["RW_AK_01.webp", "RW_EB_01.webp", "RW_JM_01.webp"];
+    const blendContainer = document.getElementById('home'); // Target the section to append images
+
+    document.addEventListener("click", (event) => {
+
+    const containerRect = blendContainer.getBoundingClientRect();
+    const clickXRelativeToContainer = event.clientX - containerRect.left;
+    const clickYRelativeToContainer = event.clientY - containerRect.top;
+    const randomIndex = Math.floor(Math.random() * imageFiles.length);
+    const randomImage = imageFolder + imageFiles[randomIndex];
+
+    const img = document.createElement("img");
+    img.src = randomImage;
+    img.classList.add("click-image");
+
+    img.onload = function() {
+    const imageWidth = this.width;
+    const imageHeight = this.height;
+    this.style.left = clickXRelativeToContainer - (imageWidth / 2) + "px";
+    this.style.top = clickYRelativeToContainer - (imageHeight / 2) + "px";
+    blendContainer.appendChild(this); // Append to the blend container
+    };
+
+    blendContainer.appendChild(img); // Append to the blend container
+});
+    </script>
+</body>
+</html>
