@@ -1,0 +1,223 @@
+
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #bababa;
+    margin: 0;
+    padding: 0;
+    font-family: var(--font-computer);
+    text-decoration: none;
+    bottom: 0;
+    overflow: hidden; /* Prevents scrollbars */
+}
+
+/* FONTS */
+
+
+:root {
+  --font-initials: 'zainer-initials', sans-serif;
+  --font-computer: 'Courier New', Courier, monospace;
+  --font-medieval: 'carol-gothic', sans-serif;
+}
+
+/* FADE INS */
+
+.fade-in-element {
+  opacity: 0 !important;
+  transition: opacity 1s ease !important; /* Default speed */
+}
+.quick {
+  transition-duration: 5s !important;
+  transition-delay: 1s !important;
+}
+.slow {
+  transition-duration: 2s !important;
+  transition-delay: 5s !important;
+}
+.opaque {
+  opacity: 1 !important;
+}
+
+/* NAVIGATION BAR */
+
+nav {
+    background: linear-gradient(180deg, rgb(0% 6.275% 99.608%) 0%, rgb(0.617% 5.515% 99.655% / 0.87890625) 6.25%, rgb(1.195% 4.804% 99.7% / 0.765625) 12.5%, rgb(1.733% 4.142% 99.741% / 0.66015625) 18.75%, rgb(2.23% 3.529% 99.779% / 0.5625) 25%, rgb(2.688% 2.966% 99.815% / 0.47265625) 31.25%, rgb(3.107% 2.451% 99.847% / 0.390625) 37.5%, rgb(3.485% 1.985% 99.876% / 0.31640625) 43.75%, rgb(3.824% 1.569% 99.902% / 0.25) 50%, rgb(4.122% 1.201% 99.925% / 0.19140625) 56.25%, rgb(4.381% 0.882% 99.945% / 0.140625) 62.5%, rgb(4.6% 0.613% 99.962% / 0.09765625) 68.75%, rgb(4.779% 0.392% 99.975% / 0.0625) 75%, rgb(4.919% 0.221% 99.986% / 0.03515625) 81.25%, rgb(5.018% 0.098% 99.994% / 0.015625) 87.5%, rgb(5.078% 0.025% 99.998% / 0.00390625) 93.75%, rgb(5.098% 0% 100% / 0) 100% );
+    height: 150px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.email {
+    color: blue;
+    font-size: 1rem;
+    font-style: italic;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 30px;
+    transition: text-shadow 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+}
+
+.email:hover {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 15px white;
+}
+
+/*ANIMATION*/
+
+:root {
+  /* Default duration for larger screens */
+  --scroll-duration: 160s;
+}
+
+@media (max-width: 768px) {
+  :root {
+    /* Faster duration for tablets and phones */
+    --scroll-duration: 200s;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    /* Even faster for smaller mobile screens */
+    --scroll-duration: 240s;
+  }
+}
+
+.animation {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    white-space: nowrap;
+    font-family: var(--font-medieval);
+    font-size: clamp(10rem, 30vw, 40vh);
+    color: white;
+    text-shadow: 0 0 15px white;
+    z-index: 1;
+    transform: translateY(-50%);
+    /* Animation Properties */
+    animation-name: scroll-text;
+    animation-duration: var(--scroll-duration); /* Adjust this for faster/slower speed */
+    animation-timing-function: linear; /* Constant speed */
+    animation-iteration-count: infinite; /* Makes it repeat forever */
+}
+
+.animation-red {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    white-space: nowrap;
+    font-family: var(--font-medieval);
+    font-size: clamp(10rem, 30vw, 40vh);
+    color: red;
+
+    z-index: 4;
+    transform: translateY(-50%);
+
+    /* Animation Properties */
+    animation-name: scroll-text;
+    animation-duration: var(--scroll-duration); /* Adjust this for faster/slower speed */
+    animation-timing-function: linear; /* Constant speed */
+    animation-iteration-count: infinite; /* Makes it repeat forever */
+}
+
+.mask-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    z-index: 5;
+    opacity: 0.9;
+    pointer-events: none;
+
+    /* Masking */
+    -webkit-mask-image: url('/logo/RW_logo.svg');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    mask-image: url('/logo/RW_logo.svg');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+@keyframes scroll-text {
+    from {
+        transform: translate(-1%, -50%); /* Starts off-screen to the right */
+    }
+    to {
+        transform: translate(-100%, -50%); /* Ends off-screen to the left */
+    }
+}
+
+.logo-landing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    z-index: 2;
+    width: 100vw;
+    height: 100vh;
+    max-height: 120%;
+    transition: filter 0.5s ease;
+}
+
+.logo-landing:hover {
+    filter: drop-shadow(0 0 15px blue);
+}
+
+.coming-soon {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 6;
+    color: black;
+    font-style: italic;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: text-shadow 0.2s ease, color 0.2s ease, font-weight 0.2s ease;
+
+}
+
+.coming-soon:hover {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0 0 15px blue;
+}
+
+
+/* FOOTER*/
+footer {
+    height: 150px;
+    background: linear-gradient(0deg, rgb(0% 6.275% 99.608%) 0%, rgb(0.617% 5.515% 99.655% / 0.87890625) 6.25%, rgb(1.195% 4.804% 99.7% / 0.765625) 12.5%, rgb(1.733% 4.142% 99.741% / 0.66015625) 18.75%, rgb(2.23% 3.529% 99.779% / 0.5625) 25%, rgb(2.688% 2.966% 99.815% / 0.47265625) 31.25%, rgb(3.107% 2.451% 99.847% / 0.390625) 37.5%, rgb(3.485% 1.985% 99.876% / 0.31640625) 43.75%, rgb(3.824% 1.569% 99.902% / 0.25) 50%, rgb(4.122% 1.201% 99.925% / 0.19140625) 56.25%, rgb(4.381% 0.882% 99.945% / 0.140625) 62.5%, rgb(4.6% 0.613% 99.962% / 0.09765625) 68.75%, rgb(4.779% 0.392% 99.975% / 0.0625) 75%, rgb(4.919% 0.221% 99.986% / 0.03515625) 81.25%, rgb(5.018% 0.098% 99.994% / 0.015625) 87.5%, rgb(5.078% 0.025% 99.998% / 0.00390625) 93.75%, rgb(5.098% 0% 100% / 0) 100% );
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    z-index: 999;
+}
+
+.copyright {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 0.8rem;
+    color: blue;
+    font-style: italic;
+    text-decoration: none;
+    pointer-events: none;
+    margin-top: 85px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
